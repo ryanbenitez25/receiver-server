@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost/td-receiver?allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: 4Se@sons!
+    type: com.zaxxer.hikari.HikariDataSource
+    poolName: SpringBootJPAHikariCP
+    maximumPoolSize: 10
+    maxLifetime: 2000000
+    connectionTimeout: 30000
+    validationTimeout: 300000
+    connection-test-query: /* ping */ SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+security:
+  jwt:
+    secret-key: '3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b'
+    expiration-time: 3600000
